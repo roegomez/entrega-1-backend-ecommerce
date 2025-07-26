@@ -1,73 +1,62 @@
-# Welcome to your Lovable project
+# Node Store API 🛒
+API RESTful construida con Node.js y Express para manejar productos y carritos de compra. Persistencia en archivos JSON.
 
-## Project info
+## 🚀 Requisitos de la entrega
+Este proyecto cumple con los siguientes puntos:
+- Manejo de productos con endpoints CRUD.
+- Manejo de carritos de compra.
+- Persistencia en sistema de archivos (`products.json` y `carts.json`).
+- Separación lógica en routers y managers.
+- Uso de clases: `ProductManager` y `CartManager`.
+---
+## 📁 Estructura del Proyecto
+/src
 
-**URL**: https://lovable.dev/projects/99f8c4a3-2a14-4e28-9b46-3b9e95f8df3a
+/managers
 
-## How can I edit this code?
+ProductManager.js
 
-There are several ways of editing your application.
+CartManager.js
 
-**Use Lovable**
+/routes
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/99f8c4a3-2a14-4e28-9b46-3b9e95f8df3a) and start prompting.
+products.router.js
 
-Changes made via Lovable will be committed automatically to this repo.
+carts.router.js
 
-**Use your preferred IDE**
+/data
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+products.json
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+carts.json
 
-Follow these steps:
+app.js
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+package.json
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
+## 📦 Instalación y ejecución
 
-# Step 3: Install the necessary dependencies.
-npm i
+```bash
+npm install
+node src/app.js
+http://localhost:8080
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+🔌 Rutas disponibles
+/api/products/
+GET / → Obtener todos los productos.
+GET /:pid → Obtener producto por ID.
+POST / → Crear un nuevo producto.
+PUT /:pid → Actualizar producto.
+DELETE /:pid → Eliminar producto.
+/api/carts/
+POST / → Crear nuevo carrito.
+GET /:cid → Ver productos en un carrito.
+POST /:cid/product/:pid → Agregar producto a un carrito.
 
-**Edit a file directly in GitHub**
+🧠 Autor
+Proyecto creado por roegomez para el curso de Programación Backend I: Desarrollo Avanzado de Backend - CODERHOUSE
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/99f8c4a3-2a14-4e28-9b46-3b9e95f8df3a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
